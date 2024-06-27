@@ -4,7 +4,7 @@
 
 1. Клонируйте репозиторий:
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/my-commits/URL-checker.git
    cd url_checker
 2. Запустите Docker:
     ```bash
