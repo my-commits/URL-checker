@@ -2,7 +2,7 @@ import requests
 from django.core.management.base import BaseCommand
 from django.utils import timezone
 
-from url_checker.checker.models import URL
+from ...models import URL
 
 
 class Command(BaseCommand):
