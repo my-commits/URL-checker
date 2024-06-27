@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb61d29f-76f5-49e5-a750-c781460a7f1e" name="Changes" comment="working bulk methods">
-      <change afterPath="$PROJECT_DIR$/url_checker/checker/celery.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/url_checker/checker/tasks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="bb61d29f-76f5-49e5-a750-c781460a7f1e" name="Changes" comment="celery task worker">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/url_checker/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/url_checker/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/url_checker/checker/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/url_checker/checker/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/url_checker/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/url_checker/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/url_checker/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/url_checker/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/url_checker/url_checker/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/url_checker/url_checker/settings.py" afterDir="false" />
@@ -124,7 +118,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719507471273</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="celery task worker">
+      <option name="closed" value="true" />
+      <created>1719512221008</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1719512221008</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -149,6 +151,7 @@
     <MESSAGE value="get urls test method" />
     <MESSAGE value="autorisation" />
     <MESSAGE value="working bulk methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="working bulk methods" />
+    <MESSAGE value="celery task worker" />
+    <option name="LAST_COMMIT_MESSAGE" value="celery task worker" />
   </component>
 </project>

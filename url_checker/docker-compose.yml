@@ -13,7 +13,6 @@ services:
     networks:
       - my_network
 
-  # Celery worker
   worker:
     build:
       context: .
@@ -21,6 +20,16 @@ services:
     command: celery -A checker.celery worker --loglevel=info
     volumes:
       - .:/code
+    depends_on:
+      - redis
+    networks:
+      - my_network
+
+  celery_beat:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: celery -A checker.celery beat --scheduler django_celery_beat.schedulers:DatabaseScheduler
     depends_on:
       - redis
     networks:
