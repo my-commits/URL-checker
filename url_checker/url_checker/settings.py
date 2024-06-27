@@ -127,3 +127,13 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ),
 }
+
+CELERY_BROKER_URL = 'redis://redis:6379/0'
+CELERY_RESULT_BACKEND = 'redis://redis:6379/0'
+
+CELERY_BEAT_SCHEDULE = {
+    'update-urls-every-5-minutes': {
+        'task': 'checker.tasks.update_urls_status',
+        'schedule': 300,  # каждые 5 минут (в секундах)
+    },
+}

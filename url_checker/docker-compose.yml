@@ -8,3 +8,31 @@ services:
       - .:/app
     ports:
       - "8000:8000"
+    depends_on:
+      - redis
+    networks:
+      - my_network
+
+  # Celery worker
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: celery -A checker.celery worker --loglevel=info
+    volumes:
+      - .:/code
+    depends_on:
+      - redis
+    networks:
+      - my_network
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge
