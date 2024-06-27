@@ -5,6 +5,7 @@ from .serializers import URLSerializer
 
 
 class URLViewSet(viewsets.ModelViewSet):
+    queryset = URL.objects.all()
     serializer_class = URLSerializer
     permission_classes = [IsAuthenticated]
 
