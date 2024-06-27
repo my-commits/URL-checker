@@ -6,7 +6,7 @@ from .views import RegisterView, LoginView
 from .views import URLViewSet
 
 router = DefaultRouter()
-router.register(r'urls', URLViewSet)
+router.register(r'urls', URLViewSet, basename='url')
 
 urlpatterns = [
     path('', include(router.urls)),

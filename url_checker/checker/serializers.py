@@ -6,9 +6,40 @@ from .models import URL
 
 
 class URLSerializer(serializers.ModelSerializer):
+    # user_id = serializers.PrimaryKeyRelatedField(read_only=True, default=serializers.CurrentUserDefault())
+
     class Meta:
         model = URL
-        fields = ['id', 'user', 'url', 'status_code', 'last_checked']
+        fields = ['id', 'url', 'status_code', 'last_checked']
+        # extra_kwargs = {'status_code': {'read_only': True}, 'last_checked': {'read_only': True}, }
+
+
+class BulkURLSerializer(serializers.ListSerializer):
+    def create(self, validated_data):
+        user = self.context['request'].user
+        urls = [URL(**item, user_id=user) for item in validated_data]
+        return URL.objects.bulk_create(urls)
+
+    def update(self, instance, validated_data):
+        instance_mapping = {instance_item.id: instance_item for instance_item in instance}
+        ret = []
+        for item in validated_data:
+            instance_item = instance_mapping.get(item['id'], None)
+            if instance_item is not None:
+                for attr, value in item.items():
+                    setattr(instance_item, attr, value)
+                instance_item.save()
+                ret.append(instance_item)
+        return ret
+
+
+class BulkURLUpdateSerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField()
+
+    class Meta:
+        model = URL
+        fields = ['id', 'url', 'status_code', 'last_checked']
+        list_serializer_class = BulkURLSerializer
 
 
 class UserSerializer(serializers.ModelSerializer):

@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
 from .models import URL
-from .serializers import URLSerializer
+from .serializers import URLSerializer, BulkURLUpdateSerializer
 from rest_framework import generics, status
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
@@ -14,6 +14,33 @@ class URLViewSet(viewsets.ModelViewSet):
     queryset = URL.objects.all()
     serializer_class = URLSerializer
     permission_classes = [IsAuthenticated]
+
+    def create(self, request, *args, **kwargs):
+        if isinstance(request.data, list):
+            serializer = self.get_serializer(data=request.data, many=True)
+            serializer.is_valid(raise_exception=True)
+            self.perform_bulk_create(serializer)
+            headers = self.get_success_headers(serializer.data)
+            return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+        else:
+            return super().create(request, *args, **kwargs)
+
+    def perform_bulk_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+    def update(self, request, *args, **kwargs):
+        if isinstance(request.data, list):
+            partial = kwargs.pop('partial', False)
+            instance = self.get_queryset().filter(pk__in=[item['id'] for item in request.data])
+            serializer = BulkURLUpdateSerializer(instance, data=request.data, many=True, partial=partial)
+            serializer.is_valid(raise_exception=True)
+            self.perform_bulk_update(serializer)
+            return Response(serializer.data)
+        else:
+            return super().update(request, *args, **kwargs)
+
+    def perform_bulk_update(self, serializer):
+        serializer.save(user=self.request.user)
 
     def get_queryset(self):
         return URL.objects.filter(user=self.request.user)

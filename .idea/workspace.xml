@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb61d29f-76f5-49e5-a750-c781460a7f1e" name="Changes" comment="get urls test method">
+    <list default="true" id="bb61d29f-76f5-49e5-a750-c781460a7f1e" name="Changes" comment="autorisation">
+      <change afterPath="$PROJECT_DIR$/url_checker/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/url_checker/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/url_checker/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/url_checker/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/url_checker/checker/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/url_checker/checker/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/url_checker/checker/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/url_checker/checker/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/url_checker/checker/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/url_checker/checker/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/url_checker/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/url_checker/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/url_checker/url_checker/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/url_checker/url_checker/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/url_checker/url_checker/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/url_checker/url_checker/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,25 +31,25 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2iT1oUuj9gFsNflsE53uvWSKKYL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.main.executor": "Run",
-    "Python.manage.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/user/PycharmProjects/URL checker/url_checker/manage.py"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.manage.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/PycharmProjects/URL checker/url_checker/manage.py&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="manage" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="URL checker" />
@@ -104,7 +107,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719501234592</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="autorisation">
+      <option name="closed" value="true" />
+      <created>1719502652295</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1719502652295</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -121,6 +132,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial" />
     <MESSAGE value="get urls test method" />
-    <option name="LAST_COMMIT_MESSAGE" value="get urls test method" />
+    <MESSAGE value="autorisation" />
+    <option name="LAST_COMMIT_MESSAGE" value="autorisation" />
   </component>
 </project>
