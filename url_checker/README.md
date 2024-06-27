@@ -17,17 +17,14 @@
     docker-compose run web python manage.py createsuperuser
 
 ## API
-- Регистрация: POST /auth/users/
-- Логин: POST /auth/token/login/
+- Регистрация: POST /api/register/
+- Логин: POST /api/login/
 - CRUD для URL:
 - GET /api/urls/
 - POST /api/urls/
 - GET /api/urls/<id>/
 - PUT /api/urls/<id>/
 - DELETE /api/urls/<id>/
-- Bulk методы:
-  - POST /api/urls/bulk_create/
-  - PUT /api/urls/bulk_update/
 
 ## Периодическая проверка URL
 - Команда для ручного запуска проверки:

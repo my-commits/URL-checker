@@ -6,12 +6,10 @@ from .models import URL
 
 
 class URLSerializer(serializers.ModelSerializer):
-    # user_id = serializers.PrimaryKeyRelatedField(read_only=True, default=serializers.CurrentUserDefault())
 
     class Meta:
         model = URL
         fields = ['id', 'url', 'status_code', 'last_checked']
-        # extra_kwargs = {'status_code': {'read_only': True}, 'last_checked': {'read_only': True}, }
 
 
 class BulkURLSerializer(serializers.ListSerializer):
